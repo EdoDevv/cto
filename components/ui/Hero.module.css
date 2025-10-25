@@ -1,0 +1,89 @@
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.canvasContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: min(960px, 90vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  color: var(--color-text);
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--color-text-muted);
+  max-width: 32ch;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button {
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(12px);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: clamp(4rem, 12vw, 6rem) clamp(1rem, 6vw, 2rem);
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .subtitle {
+    max-width: 28ch;
+  }
+}
